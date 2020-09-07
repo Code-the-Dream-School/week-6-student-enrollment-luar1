@@ -17,26 +17,119 @@
     <div class="jumbotron bg-dark text-white width">
       <h1 class="display-4">Student Enrollment program</h1>
       <hr class="my-4">
-      <button class="btn btn-outline-info" type="button" id="students">Students</button>
-      <button class="btn btn-outline-info" type="button" id="courses">courses</button>
-      <button class="btn btn-outline-info" type="button" id="new">New Student</button>
-      <div class="invalid-tooltip">Only 4 courses per student</div>
+      <button class="btn btn-outline-info" type="button" id="students_btn">Students</button>
+      <button class="btn btn-outline-info" type="button" id="courses_btn">Courses</button>
+      <button class=" btn btn-outline-info" type="button" id="new_btn" data-toggle="modal"
+        data-target="#modal-new-student">New Student</button>
     </div>
+
     <section id="student-info">
     </section>
 
+    <section id="courses-info">
+    </section>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <div class="modal fade " id="modal-new-student" tabindex="-1" role="dialog" aria-labelledby="register form"
+      aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <h5 class="modal-title" id="addNewStudent">New Student</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form id="addNewStudentForm">
+              <div class="form-group">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" id="name" required>
+                <div class="invalid-feedback">
+                  Please provide a name
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+                <div class="invalid-feedback">
+                  Please provide a Last Name
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="status-drop-down">Status</label>
+                <select name="status-drop-down" id="status-drop-down">
+                  <option value="true">Active</option>
+                  <option value="false">Inactive</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a status
+                </div>
+              </div>
+              <button class="btn btn-outline-info btn-block" name="submit" id="add_btn">Save</button>
+          </div>
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+
+  <div class="modal fade" id="modal-edit-student" tabindex="-1" role="dialog" aria-labelledby="register form"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-body">
+            <div class="form-group">
+              <label for="name-edit">First Name</label>
+              <input type="text" class="form-control" id="name-edit" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName-edit">Last Name</label>
+              <input type="text" class="form-control" id="lastName-edit" required>
+            </div>
+            <div class="form-group">
+              <label for="status-drop-down-edit">Status</label>
+              <select name="status-drop-down" id="status-drop-down-edit">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+              </select>
+            </div>
+            <button class="btn btn-outline-info btn-block" id="editSave_btn">Save</button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="final.js"></script>
+
+
+
 </body>
 
 </html>
